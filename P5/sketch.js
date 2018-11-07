@@ -1,5 +1,5 @@
-var hundur;
-var blóm;
+var hundur;//https://www.youtube.com/watch?v=mRf3-JkwqfU
+var blóm;//https://www.pexels.com/photo/nature-summer-purple-yellow-36753/
 var hlutfall = 1;
 function preload() {
   hundur = loadImage('mynd1.jpg');
