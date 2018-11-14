@@ -19,10 +19,12 @@ function setup() {
 	textFont("Courier New",16);
 	textStyle(BOLD);
 	background(tré);
+	colorMode(HSB);
+	frameRate(50);
 }
 
 function draw() {
-  background(179, 233, 245);
+	background(tré);
   x = x + hradiX;
   y = y + hradiY;
   if ((x > width-boltiStaerd/2) || (x < boltiStaerd/2))  {
@@ -38,6 +40,6 @@ function draw() {
   fill(245, 179, 241);
   ellipse(x, y, boltiStaerd, boltiStaerd);
 	rect(mouseX,spadiY ,spadiBreidd,spadiThykkt);
-	fill(0);
+	fill(255, 255, 255);
 	text("Stig: " + stig,20,20);
 }
