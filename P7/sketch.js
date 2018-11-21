@@ -10,7 +10,6 @@ function draw() {
   // x var 200 og y var 150
 }
 
-// Teiknar geimveruna zoog
 function blúbb(x,y, augun, búkur, haus){
   rectMode(CENTER);
   // Teiknum búkinn
