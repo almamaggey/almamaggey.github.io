@@ -1,27 +1,30 @@
-var blúbb1, blúbb2, blúbb3;
+var blúbbi=[];
 
 function setup() {
   createCanvas(600,600);
-  blúbb1= new blúbb(200,400,80);
-  blúbb2= new blúbb(300,150,120);
-  blúbb3= new blúbb(400,200,100);
-
+  for (var i=0; i<70; i=i+1){
+    blúbbi[i]= new blúbb( random(200,400),random(200,150), random(100,200));
+  }
 }
 
 function draw() {
   background(255, 147, 247);
-  fill(123,197,250)
-  noStroke();
-  rect(300,300,400,400)
-//hreyfing
-blúbb1.move();
-blúbb1.show();
-blúbb2.move();
-blúbb2.show();
-blúbb3.move();
-blúbb3.show();
-}
+  fill(123,197,250);
 
+  noStroke();
+  rect(300,300,400,400);
+  for(var i=0; i<blúbbi.length; i=i+1){
+    blúbbi[i].move();
+    blúbbi[i].show();
+  }
+}
+function mousePressed(){
+  for(var i= blúbbi.length-1; i>=0; i =i-1){
+    if(fjarlægð(blúbbi[i].x, blúbbi[i].y, mouseX, mouseY)<50){
+      blúbbi.splice(i,1);
+    }
+  }
+}
 class blúbb{
 constructor(x,y,bukur){
   this.x = x;
@@ -32,6 +35,7 @@ constructor(x,y,bukur){
   this. eyeColor = color(100,100,100);
   this. eyesize= random(0.5,2);
 }
+
 //geimveran
 show(){
   rectMode(CENTER);
@@ -52,7 +56,7 @@ show(){
   line (this.x + 20, this.y + this.bukur/2, this.x + 20, this.y + this.bukur/2 + 50);
   //hendur
   line(this.x+25, this.y-1,this.x+50, this.y + this.bukur/4+20);
-  line(this.x-60, this.y+5,this.x-25, this.y + this.bukur/6+7)
+  line(this.x-60, this.y+5,this.x-25, this.y + this.bukur/6+7);
 
 }
 move(){
